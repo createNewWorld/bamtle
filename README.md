@@ -11,3 +11,4 @@ https://github.com/createNewWorld/bamtle.git
 npm i bamtle --save-dev
 
 ## 组件
+Button type ['normal', 'primary', 'success', 'info', 'warn', 'error']
