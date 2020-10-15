@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <button ref="btn"></button>
-  </div>
+  <button :class="{
+      'normal-btn': type == 'normal',
+      'primary-btn': type == 'primary',
+      'error-btn': type == 'error',
+    }"><slot></slot></button>
 </template>
 
 <script>
@@ -9,34 +11,40 @@ export default {
   name: "Button",
   data() {
     return {
-      domClass: 'bt-normal-btn'
-    }
+      type: "primary",
+    };
   },
   mounted() {
-    if(!!this.$refs.btn) {
-      console.log('000---this.$refs.btn', this.$refs.btn);
+    if (!!this.$refs.btn) {
+      this.type = this.$refs.btn.$attrs.type;
     }
-  }
+  },
 };
 </script>
 
 <style scoped>
-.bt-normal-btn {
+.normal-btn {
   background-color: #8fb3f7;
   color: white;
   cursor: pointer;
+  border-radius: 0.25rem;
+  border: none;
 }
-.bt-primary-btn {
+.primary-btn {
   background-color: #8fb3f7;
   color: white;
   cursor: pointer;
-  font-size: 16rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: none;
 }
 
-.bt-error-btn {
+.error-btn {
   background-color: #e34d4d;
   color: white;
   cursor: pointer;
-  font-size: 16rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: none;
 }
 </style>

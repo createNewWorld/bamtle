@@ -1,9 +1,9 @@
 {
   "name": "bamtle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "A utility program. As tough as a bamboo beetle.",
-  "main": "index.js",
+  "main": "/packages/index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --open",
     "dev": "webpack-dev-server --inline --progress --config webpack.dev.conf.js",

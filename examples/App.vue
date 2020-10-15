@@ -1,16 +1,22 @@
 <template>
   <div id="app">
-    <Button type="primary">我使用了bamtle的Button组件</Button>
+    <Button ref="btn" type="error">Button</Button>
+    <Box>ssss</Box>
   </div>
 </template>
 
 <script>
 export default {
   name: "app",
+  mounted() {
+    console.log("btn =", this.$refs.btn);
+  }
 };
 </script>
 
 <style scoped>
+html{ font-size:16px;}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

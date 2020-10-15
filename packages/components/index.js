@@ -1,7 +1,9 @@
 import Button from './Button';
+import Box from './Box';
 
 const components = [
-  Button
+  Button,
+  Box
 ]
 
 const install = function (Vue) {

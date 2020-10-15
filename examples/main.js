@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import 'babel-polyfill'
-import BamtleUI from './../packages/components'
+import Button from './../packages/components/Button'
+import Box from './../packages/components/Box'
 
-Vue.use(BamtleUI)
+Vue.use(Button)
+Vue.use(Box)
 
 new Vue({
   render: h=> h(App)
