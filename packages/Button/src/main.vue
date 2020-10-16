@@ -83,6 +83,10 @@ button {
   -webkit-transition: background-color 0.1s;
 }
 
+button > span {
+  margin: 0 0.25rem;
+}
+
 /* 充满宽度 */
 .fill {
   width: 100%;
