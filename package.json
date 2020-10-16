@@ -3,9 +3,10 @@
   "version": "1.0.4",
   "private": false,
   "description": "A utility program. As tough as a bamboo beetle.",
+  "main": "dist/bamtle.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build --target lib --name bamtle packages/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
