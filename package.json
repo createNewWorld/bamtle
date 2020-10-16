@@ -1,7 +1,8 @@
 {
   "name": "bamtle",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.4",
+  "private": false,
+  "description": "A utility program. As tough as a bamboo beetle.",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
@@ -21,5 +22,12 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/createNewWorld/bamtle/issues"
+  },
+  "respository": {
+    "type": "git",
+    "url": "git@https://github.com/createNewWorld/bamtle.git"
+  }
 }

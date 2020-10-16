@@ -1,19 +1,17 @@
 # bamtle
 
-## Project setup
-```
-npm install
-```
+## 项目git地址
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+https://github.com/createNewWorld/bamtle.git
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 项目描述
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+一个Vue项目组件的封装库
+
+## 使用
+
+npm i bamtle --save-dev
+
+## 组件
+Button type ['normal', 'primary', 'success', 'info', 'warn', 'error']
+Ember 空白换行
