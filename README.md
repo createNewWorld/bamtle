@@ -12,3 +12,4 @@ npm i bamtle --save-dev
 
 ## 组件
 Button type ['normal', 'primary', 'success', 'info', 'warn', 'error']
+Ember 空白换行
