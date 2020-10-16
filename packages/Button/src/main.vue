@@ -17,16 +17,11 @@ export default {
     };
   },
   props: {
-    /* 按钮形状 */
     design: {
       type: String,
       default: "block",
     },
     icon: String,
-    // type: {
-    //   type: String,
-    //   default: "normal",
-    // },
   },
   computed: {
     styles: {
@@ -123,7 +118,6 @@ button > span {
   color: white;
   border: none;
   background-color: #0366d6;
-  border: 1px solid transparent;
 }
 .primary:hover {
   cursor: pointer;
@@ -142,7 +136,6 @@ button > span {
   color: white;
   border: none;
   background-color: #19be6b;
-  border: 1px solid transparent;
 }
 .success:hover {
   cursor: pointer;
@@ -161,7 +154,6 @@ button > span {
   color: white;
   border: none;
   background-color: #2db7f5;
-  border: 1px solid transparent;
 }
 .info:hover {
   cursor: pointer;
@@ -198,7 +190,6 @@ button > span {
   color: white;
   background-color: #fa6060;
   border: none;
-  border: 1px solid transparent;
 }
 .error:hover {
   cursor: pointer;
