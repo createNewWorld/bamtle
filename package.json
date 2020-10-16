@@ -6,7 +6,7 @@
   "main": "/packages/index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --open",
-    "dev": "webpack-dev-server --inline --progress --config webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config webpack.config.js",
     "pro": "webpack --mode production",
     "build": "webpack --config webpack.config.js --progress",
     "test": "echo \"Error: no test specified\" && exit 1"

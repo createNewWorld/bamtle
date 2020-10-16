@@ -1,15 +1,16 @@
 import Button from './Button';
-import Box from './Box';
+import Embr from './Embr';
 
 const components = [
   Button,
-  Box
+  Embr
 ]
 
 const install = function (Vue) {
   if (install.installed) return;
   install.installed = true;
   components.map(component => {
+    debugger
     Vue.use(component.name, component);
   })
   //检测到Vue 才执行
@@ -17,8 +18,6 @@ const install = function (Vue) {
     install(window.Vue)
   }
 }
-
-
 
 //全量导出
 export default {

@@ -1,6 +1,8 @@
 <template>
   <button ref="btn" :class="styles" :disabled="disabled" @click="clickHandler">
-    <slot></slot>
+    <span>
+      <slot></slot>
+    </span>
   </button>
 </template>
 
@@ -11,6 +13,7 @@ export default {
     return {
       type: "normal",
       disabled: false,
+      full: false,
     };
   },
   props: {
@@ -28,7 +31,13 @@ export default {
   computed: {
     styles: {
       get() {
-        return ["ez-button", this.design, this.icon, this.type];
+        return [
+          "ez-button",
+          this.design,
+          this.icon,
+          this.type,
+          this.full ? "fill" : "",
+        ];
       },
     },
   },
@@ -38,12 +47,10 @@ export default {
     },
   },
   mounted() {
-    console.log("this.$refs.btn", this.$refs.btn);
     this.type = this.$refs.btn.getAttribute("type");
+    this.full = this.$refs.btn.getAttribute("long") == "";
     let ds = this.$refs.btn.getAttribute("disabled");
     this.disabled = ds == "disabled" || ds == true;
-    console.log("type", this.type);
-    console.log("disabled", this.disabled);
   },
 };
 </script>
@@ -51,6 +58,11 @@ export default {
 <style lang="scss" scoped>
 /* 引入矢量图标 */
 /* @import '../../assets/icons/iconfont.css'; */
+/**
+ * 问题:
+ * 1. 屏幕压缩, 文字溢出
+ * 2. icon 填充
+ */
 $disableColor: #d0d7da;
 @mixin disableBtn() {
   background-color: $disableColor;
@@ -59,32 +71,47 @@ $disableColor: #d0d7da;
 
 button {
   width: auto;
-  height: 100;
-  outline: none;
+  height: 2rem;
+  outline: 0;
+  display: inline-block;
   font-size: 0.875rem;
+  font-weight: 400;
+  user-select: none;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
 
   /* 动画设置 */
-  transition: border 0.8s;
-  -webkit-transition: border 0.8s;
+  transition: border 0.2s;
+  -webkit-transition: border 0.2s;
   transition: background-color 0.1s;
   -webkit-transition: background-color 0.1s;
 }
 
+/* 充满宽度 */
+.fill {
+  width: 100%;
+}
+
+button > span {
+  display: inline-block;
+}
+
 /*normal style*/
 .normal {
-  border: 1px solid #878788;
-  background-color: white;
-  color: #5c5c5a;
+  border: 1px solid #c8c8c9;
+  background-color: #f1f1f1;
+  color: #586073;
   font-size: 0.875rem;
 }
 .normal:hover {
   cursor: pointer;
-  background-color: #f4f4f5;
+  background-color: #fafafa;
 }
 .normal:active {
-  color: #000;
-  border: 1px solid #878788;
-  background-color: #f4f4f5;
+  color: #586073;
+  border: 1px solid #c8c8c9;
+  background-color: white;
 }
 .normal:disabled {
   @include disableBtn();
@@ -96,6 +123,7 @@ button {
   color: white;
   border: none;
   background-color: #0366d6;
+  border: 1px solid transparent;
 }
 .primary:hover {
   cursor: pointer;
@@ -114,6 +142,7 @@ button {
   color: white;
   border: none;
   background-color: #19be6b;
+  border: 1px solid transparent;
 }
 .success:hover {
   cursor: pointer;
@@ -132,6 +161,7 @@ button {
   color: white;
   border: none;
   background-color: #2db7f5;
+  border: 1px solid transparent;
 }
 .info:hover {
   cursor: pointer;
@@ -168,6 +198,7 @@ button {
   color: white;
   background-color: #fa6060;
   border: none;
+  border: 1px solid transparent;
 }
 .error:hover {
   cursor: pointer;
@@ -189,7 +220,7 @@ button {
 
 /* 半圆 */
 .oval {
-  border-radius: 50%;
+  border-radius: 2rem;
 }
 
 /* 圆角 */

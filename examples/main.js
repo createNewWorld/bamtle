@@ -2,10 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import 'babel-polyfill'
 import Button from './../packages/components/Button'
-import Box from './../packages/components/Box'
+import Embr from './../packages/components/Embr'
 
 Vue.use(Button)
-Vue.use(Box)
+Vue.use(Embr)
 
 new Vue({
   render: h=> h(App)
